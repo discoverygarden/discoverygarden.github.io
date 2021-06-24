@@ -1,3 +1,12 @@
+/**
+ * Calls the appropriate form function.
+ *
+ * Calls the appropriate form function based on
+ * JSON response.
+ *
+ * @param json
+ *   The json response.
+ */
 function logResult(json) {
   if(json.result === "success"){
     formSuccess();
@@ -6,6 +15,12 @@ function logResult(json) {
   }
 }
 
+/**
+ * Ajax call for pardot to work in webflow.
+ *
+ * Adapted from
+ * https://forum.webflow.com/t/success-error-messages-and-pardot-form-handlers-with-webflow/92580.
+ */
 makeWebflowFormAjax = function(forms, successCallback, errorCallback) {
   forms.each(function() {
     var form = $(this);
